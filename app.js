@@ -125,10 +125,11 @@ var taskCompleted=function(){
 
     //Append the task list item to the #completed-tasks
     var listItem=this.parentNode;
+    var editBtn=listItem.querySelector(".block-button-edit");
     completedTasksHolder.appendChild(listItem);
     bindTaskEvents(listItem, taskIncomplete);
     listItem.classList= "complete-block__list-item list-item";
-
+    editBtn.innerText="Edit";
 }
 
 
@@ -138,9 +139,11 @@ var taskIncomplete=function(){
     //When the checkbox is unchecked
     //Append the task list item to the #incompleteTasks.
     var listItem=this.parentNode;
+    var editBtn=listItem.querySelector(".block-button-edit");
     incompleteTaskHolder.appendChild(listItem);
     bindTaskEvents(listItem,taskCompleted);
     listItem.classList= "incomplete-block__list-item list-item";
+    editBtn.innerText="Edit";
 }
 
 
